@@ -23,3 +23,10 @@ Session resume using:
 Voucher code
 Transaction ID (TID)
 Automatic session expiration
+
+🧑‍💼 Admin Features
+Dashboard with analytics (users, revenue, sessions)
+Voucher generation and management
+Staff account management
+Active user monitoring
+Payment tracking
