@@ -31,3 +31,31 @@ Staff account management
 Active user monitoring
 Payment tracking
 
+🏗️ System Architecture
+User → WiFi → Router → SurfLink Portal → Backend API → Database
+                                      ↓
+                                Payment Gateway
+                                      ↓
+                                Internet Access
+⚙️ Tech Stack
+Frontend
+React (Vite)
+Axios
+React Router
+Backend
+Django
+Django REST Framework
+Database
+PostgreSQL / MySQL
+Network Integration
+MikroTik Router (Hotspot system)
+Payment Integration
+MTN Mobile Money
+Airtel Money
+📁 Project Structure
+surflink/
+│
+├── backend/        # Django backend
+├── frontend/       # React frontend
+├── venv/           # Python virtual environment
+└── README.md
