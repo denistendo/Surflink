@@ -12,3 +12,14 @@ Login using vouchers
 Resume sessions using transaction IDs or voucher codes
 
 The system also provides an admin interface for managing users, payments, vouchers, and staff.
+
+🧩 Features
+👤 User Features
+Captive portal login system
+Buy internet packages (e.g., hourly, daily)
+Mobile money payment integration
+Voucher-based login
+Session resume using:
+Voucher code
+Transaction ID (TID)
+Automatic session expiration
