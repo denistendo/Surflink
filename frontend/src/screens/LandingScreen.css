@@ -31,7 +31,7 @@
 .logo-text {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #000;
+  color: #ffffff;
   letter-spacing: -0.5px;
 }
 
@@ -51,13 +51,13 @@
 .main-title {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff;
   margin-bottom: 0.5rem;
   letter-spacing: -1px;
 }
 
 .subtitle {
-  color: #475569;
+  color: #94a3b8;
   font-size: 1rem;
 }
 
