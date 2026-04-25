@@ -1,149 +1,162 @@
 import React, { useState } from 'react';
-import { Wifi, Clock, Calendar, BarChart2, Smartphone, Ticket, Zap, MessageCircle, HelpCircle, LayoutList } from 'lucide-react';
+import { Wifi, Clock, Calendar, BarChart2, Smartphone, Ticket, Zap, MessageCircle, HelpCircle, LayoutList, CheckCircle2, Signal } from 'lucide-react';
 import './LandingScreen.css';
 
+const packages = [
+  {
+    id: '1hour',
+    icon: Clock,
+    label: '1 Hour',
+    sub: 'Quick session · Ultra-fast',
+    price: '500',
+    badge: null,
+  },
+  {
+    id: '24hours',
+    icon: Calendar,
+    label: '24 Hours',
+    sub: 'Full day · Unlimited access',
+    price: '2,000',
+    badge: 'Popular',
+  },
+  {
+    id: '7days',
+    icon: BarChart2,
+    label: '7 Days',
+    sub: 'Weekly · Best value',
+    price: '10,000',
+    badge: 'Best Deal',
+  },
+];
+
 const LandingScreen = () => {
-  const [selectedPackage, setSelectedPackage] = useState('1hour');
+  const [selectedPackage, setSelectedPackage] = useState('24hours');
 
   return (
-    <div className="landing-screen">
+    <div className="ls-root">
+      {/* Background blobs */}
+      <div className="ls-blob ls-blob--1" />
+      <div className="ls-blob ls-blob--2" />
+
       {/* Header */}
-      <header className="app-header">
-        <div className="logo-section">
-          <Wifi className="logo-icon" size={24} color="var(--primary)" />
-          <span className="logo-text">SurfLink</span>
+      <header className="ls-header">
+        <div className="ls-logo">
+          <div className="ls-logo-icon">
+            <Wifi size={16} strokeWidth={2.5} />
+          </div>
+          <span className="ls-logo-text">SurfLink</span>
         </div>
-        <div className="user-avatar">
-          <img src="https://ui-avatars.com/api/?name=Surflink+User&background=1e293b&color=fff" alt="User" />
+        <div className="ls-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=SL&background=0ea5e9&color=fff&bold=true&size=80"
+            alt="User"
+          />
+          <span className="ls-avatar-ring" />
         </div>
       </header>
 
-      {/* Hero Section */}
-      <div className="hero-section">
-        <h1 className="main-title">SurfLink</h1>
-        <p className="subtitle">Fast and reliable internet access</p>
-      </div>
+      {/* Hero */}
+      <section className="ls-hero">
+        <div className="ls-signal-badge">
+          <Signal size={12} strokeWidth={2.5} />
+          <span>Hotspot Active</span>
+          <span className="ls-pulse" />
+        </div>
+        <h1 className="ls-hero-title">
+          Stay <span className="ls-hero-accent">Connected</span>,<br />
+          Stay Fast.
+        </h1>
+        <p className="ls-hero-sub">Premium internet access — simple, instant, reliable.</p>
+      </section>
 
       {/* Main Card */}
-      <div className="main-card">
-        <div className="badge-container">
-          <div className="status-badge">
-            <span className="status-dot"></span>
-            Hotspot Active
+      <div className="ls-card">
+        <p className="ls-card-label">Choose Your Plan</p>
+
+        <div className="ls-packages">
+          {packages.map(({ id, icon: Icon, label, sub, price, badge }) => (
+            <button
+              key={id}
+              className={`ls-pkg${selectedPackage === id ? ' ls-pkg--active' : ''}`}
+              onClick={() => setSelectedPackage(id)}
+            >
+              {badge && <span className="ls-pkg-badge">{badge}</span>}
+              <div className={`ls-pkg-icon${selectedPackage === id ? ' ls-pkg-icon--active' : ''}`}>
+                <Icon size={18} strokeWidth={2} />
+              </div>
+              <div className="ls-pkg-info">
+                <strong>{label}</strong>
+                <span>{sub}</span>
+              </div>
+              <div className="ls-pkg-right">
+                <p className="ls-pkg-price">UGX {price}</p>
+                {selectedPackage === id && (
+                  <CheckCircle2 size={16} className="ls-pkg-check" />
+                )}
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Number */}
+        <div className="ls-field">
+          <label className="ls-field-label">Mobile Number</label>
+          <div className="ls-input-wrap">
+            <Smartphone size={17} className="ls-input-icon" strokeWidth={2} />
+            <input type="tel" placeholder="07XX XXX XXX" className="ls-input" />
           </div>
         </div>
 
-        <h2 className="section-title">Select a Package</h2>
-
-        <div className="packages-list">
-          <div 
-            className={`package-item ${selectedPackage === '1hour' ? 'selected' : ''}`}
-            onClick={() => setSelectedPackage('1hour')}
-          >
-            <div className="package-icon-wrapper blue">
-              <Clock size={20} />
-            </div>
-            <div className="package-details">
-              <h3>1 Hour</h3>
-              <p>Ultra-fast browsing</p>
-            </div>
-            <div className="package-price">UGX 500</div>
-          </div>
-
-          <div 
-            className={`package-item ${selectedPackage === '24hours' ? 'selected' : ''}`}
-            onClick={() => setSelectedPackage('24hours')}
-          >
-            <div className="package-icon-wrapper light-blue">
-              <Calendar size={20} />
-            </div>
-            <div className="package-details">
-              <h3>24 Hours</h3>
-              <p>Daily unlimited access</p>
-            </div>
-            <div className="package-price">UGX<br/>2,000</div>
-          </div>
-
-          <div 
-            className={`package-item ${selectedPackage === '7days' ? 'selected' : ''}`}
-            onClick={() => setSelectedPackage('7days')}
-          >
-            <div className="package-icon-wrapper light-blue">
-              <BarChart2 size={20} />
-            </div>
-            <div className="package-details">
-              <h3>7 Days</h3>
-              <p>Best value for power users</p>
-            </div>
-            <div className="package-price">UGX<br/>10,000</div>
-          </div>
-        </div>
-
-        <div className="form-group">
-          <label>ENTER MOBILE NUMBER</label>
-          <div className="input-wrapper">
-            <Smartphone className="input-icon" size={20} />
-            <input type="tel" placeholder="07XX XXX XXX" />
-          </div>
-        </div>
-
-        <button className="btn-primary w-full connect-btn">
-          Pay & Connect <Zap size={18} fill="currentColor" />
+        <button className="ls-btn-primary">
+          <Zap size={17} fill="currentColor" strokeWidth={0} />
+          Pay & Connect
         </button>
 
-        <div className="divider">
-          <span>OR</span>
-        </div>
+        <div className="ls-divider"><span>or use a voucher</span></div>
 
-        <div className="form-group">
-          <label>ENTER VOUCHER CODE</label>
-          <div className="input-wrapper">
-            <Ticket className="input-icon" size={20} />
-            <input type="text" placeholder="XXXX-XXXX-XXXX" />
+        {/* Voucher */}
+        <div className="ls-field">
+          <label className="ls-field-label">Voucher Code</label>
+          <div className="ls-input-wrap">
+            <Ticket size={17} className="ls-input-icon" strokeWidth={2} />
+            <input type="text" placeholder="XXXX-XXXX-XXXX" className="ls-input" />
           </div>
         </div>
 
-        <button className="btn-outline w-full voucher-btn">
-          Login with Voucher
-        </button>
+        <button className="ls-btn-outline">Login with Voucher</button>
       </div>
 
-      {/* Promo Card */}
-      <div className="promo-card">
-        <div className="promo-image">
-           <div className="fake-graphic"></div>
-        </div>
-        <div className="promo-text">
-          <h3>Experience 5G Speeds</h3>
-          <p>Enjoy seamless streaming and video calls with SurfLink's advanced network infrastructure.</p>
+      {/* Promo Strip */}
+      <div className="ls-promo">
+        <div className="ls-promo-glow" />
+        <div className="ls-promo-inner">
+          <div className="ls-promo-icon">
+            <Wifi size={28} strokeWidth={1.5} />
+          </div>
+          <div>
+            <h3 className="ls-promo-title">5G-Grade Speeds</h3>
+            <p className="ls-promo-body">Seamless streaming, calls & browsing — zero throttling.</p>
+          </div>
         </div>
       </div>
 
       {/* FAB */}
-      <button className="fab-button">
-        <MessageCircle size={24} color="white" fill="currentColor" />
+      <button className="ls-fab" aria-label="Chat support">
+        <MessageCircle size={22} fill="white" strokeWidth={0} />
       </button>
 
-      {/* Bottom Navigation */}
-      <nav className="bottom-nav">
-        <div className="nav-item active">
-          <div className="nav-icon-wrapper">
-            <Wifi size={22} />
-          </div>
-          <span>CONNECT</span>
-        </div>
-        <div className="nav-item">
-          <div className="nav-icon-wrapper">
-            <LayoutList size={22} />
-          </div>
-          <span>PACKAGES</span>
-        </div>
-        <div className="nav-item">
-          <div className="nav-icon-wrapper">
-            <HelpCircle size={22} />
-          </div>
-          <span>SUPPORT</span>
-        </div>
+      {/* Bottom Nav */}
+      <nav className="ls-nav">
+        {[
+          { icon: Wifi, label: 'Connect', active: true },
+          { icon: LayoutList, label: 'Packages', active: false },
+          { icon: HelpCircle, label: 'Support', active: false },
+        ].map(({ icon: Icon, label, active }) => (
+          <button key={label} className={`ls-nav-item${active ? ' ls-nav-item--active' : ''}`}>
+            <Icon size={20} strokeWidth={active ? 2.5 : 2} />
+            <span>{label}</span>
+          </button>
+        ))}
       </nav>
     </div>
   );
