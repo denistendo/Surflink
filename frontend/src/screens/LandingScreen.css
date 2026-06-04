@@ -5,10 +5,25 @@
   width: 100%;
   background-color: var(--bg-color);
   padding-bottom: 80px; /* Space for bottom nav */
+  position: relative;
+}
+
+.ls-root::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/logo.png');
+  background-repeat: repeat;
+  background-size: 80px 80px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Header */
 .ls-header {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +51,8 @@
 
 /* Main Content */
 .ls-main {
+  position: relative;
+  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
