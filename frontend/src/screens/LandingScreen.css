@@ -3,22 +3,9 @@
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--bg-color);
+  background-color: transparent;
   padding-bottom: 80px; /* Space for bottom nav */
   position: relative;
-}
-
-.ls-root::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('/logo.png');
-  background-repeat: repeat;
-  background-size: 80px 80px;
-  opacity: 0.08;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* Header */
@@ -184,7 +171,9 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 500px; /* Matches PortalLayout */
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: space-around;
