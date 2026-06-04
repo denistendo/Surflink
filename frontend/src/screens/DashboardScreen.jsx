@@ -1,6 +1,5 @@
 import React from 'react';
 import { Wifi, Clock, CalendarDays, Router as RouterIcon, Power } from 'lucide-react';
-import BottomNav from '../components/BottomNav';
 import './DashboardScreen.css';
 
 const DashboardScreen = () => {
@@ -76,8 +75,6 @@ const DashboardScreen = () => {
           <span>Disconnect</span>
         </button>
       </main>
-
-      <BottomNav />
     </div>
   );
 };

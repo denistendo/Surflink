@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import { Wifi, ShoppingCart } from 'lucide-react';
-import BottomNav from '../components/BottomNav';
 import './LandingScreen.css';
 
 const LandingScreen = () => {
@@ -56,7 +55,6 @@ const LandingScreen = () => {
         </p>
       </main>
 
-      <BottomNav />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Clock, Calendar, Zap, Star } from 'lucide-react';
-import BottomNav from '../components/BottomNav';
 import './PackagesScreen.css';
 
 const PackagesScreen = () => {
@@ -85,8 +84,6 @@ const PackagesScreen = () => {
           All packages include high-speed internet access. No hidden fees.
         </p>
       </main>
-
-      <BottomNav />
     </div>
   );
 };
