@@ -1,0 +1,41 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(241, 245, 249, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.75rem 0.5rem max(0.75rem, env(safe-area-inset-bottom));
+  z-index: 20;
+}
+
+.bn-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bn-icon {
+  stroke-width: 2;
+}
+
+.bn-item span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.bn-item:hover,
+.bn-item--active {
+  color: var(--primary);
+}

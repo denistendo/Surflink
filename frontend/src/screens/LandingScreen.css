@@ -163,47 +163,4 @@
   line-height: 1.5;
 }
 
-/* Bottom Navigation */
-.ls-nav {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 500px; /* Matches PortalLayout */
-  background-color: rgba(241, 245, 249, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-around;
-  padding: 0.75rem 0.5rem max(0.75rem, env(safe-area-inset-bottom));
-  z-index: 20;
-}
 
-.ls-nav-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  color: #64748b;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.ls-nav-icon {
-  stroke-width: 2;
-}
-
-.ls-nav-item span {
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.ls-nav-item:hover,
-.ls-nav-item--active {
-  color: var(--primary);
-}

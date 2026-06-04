@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { Wifi, ShoppingCart, Home, Gauge, Ticket, HelpCircle } from 'lucide-react';
+import { Wifi, ShoppingCart } from 'lucide-react';
+import BottomNav from '../components/BottomNav';
 import './LandingScreen.css';
 
 const LandingScreen = () => {
@@ -55,29 +56,7 @@ const LandingScreen = () => {
         </p>
       </main>
 
-      {/* Bottom Navigation */}
-      <nav className="ls-nav">
-        <button className="ls-nav-item ls-nav-item--active">
-          <Home size={24} className="ls-nav-icon" />
-          <span>Connect</span>
-        </button>
-        <button className="ls-nav-item">
-          <Gauge size={24} className="ls-nav-icon" />
-          <span>Dashboard</span>
-        </button>
-        <button className="ls-nav-item">
-          <ShoppingCart size={24} className="ls-nav-icon" />
-          <span>Packages</span>
-        </button>
-        <button className="ls-nav-item">
-          <Ticket size={24} className="ls-nav-icon" />
-          <span>Voucher</span>
-        </button>
-        <button className="ls-nav-item">
-          <HelpCircle size={24} className="ls-nav-icon" />
-          <span>Support</span>
-        </button>
-      </nav>
+      <BottomNav />
     </div>
   );
 };
