@@ -48,8 +48,8 @@ const LandingScreen = () => {
         </div>
         <div className="ls-avatar">
           <img
-            src="https://ui-avatars.com/api/?name=SL&background=0ea5e9&color=fff&bold=true&size=80"
-            alt="User"
+            src="https://ui-avatars.com/api/?name=Deniss+Tendo&background=0ea5e9&color=fff&bold=true&size=80"
+            alt="Deniss Tendo"
           />
           <span className="ls-avatar-ring" />
         </div>
