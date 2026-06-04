@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #0b192c; /* Deep dark blue */
+  --bg-color: #ffffff; 
   --surface-dark: #1e293b; 
   --surface-light: #ffffff;
   
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
+  --primary: #154fb8; /* Matched to screenshot blue */
+  --primary-hover: #1e40af;
+  --primary-light: #eef2ff;
   
   --success: #10b981;
   --success-bg: #d1fae5;
   --danger: #ef4444;
   --warning: #f59e0b;
   
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
   
-  --border-color: #e5e7eb;
+  --border-color: #e2e8f0;
 }
 
 * {
@@ -27,7 +28,7 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #050c17; /* Darker outside the app container */
+  background-color: #f1f5f9; /* Light gray outside the app container */
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
