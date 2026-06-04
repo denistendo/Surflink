@@ -7,8 +7,8 @@ const LandingScreen = () => {
     <div className="ls-root">
       {/* Header */}
       <header className="ls-header">
-        <Wifi size={24} className="ls-header-icon" />
-        <span className="ls-header-text">Deniss Tendo Portal</span>
+        <img src="/logo.png" alt="Surflink Logo" className="ls-header-logo-img" />
+        <span className="ls-header-text">Surflink</span>
       </header>
 
       {/* Main Content */}

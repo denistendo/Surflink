@@ -22,6 +22,12 @@
   stroke-width: 2.5;
 }
 
+.ls-header-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
 .ls-header-text {
   font-size: 1.125rem;
   font-weight: 700;
