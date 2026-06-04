@@ -24,7 +24,7 @@ const LandingScreen = () => {
           <div className="ls-input-group">
             <input 
               type="text" 
-              placeholder="E n t e r  v o u c h e r  c o d e" 
+              placeholder="Enter voucher code" 
               className="ls-input"
             />
           </div>
