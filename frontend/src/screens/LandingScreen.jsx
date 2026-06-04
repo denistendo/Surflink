@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Wifi, ShoppingCart, Home, Gauge, Ticket, HelpCircle } from 'lucide-react';
 import './LandingScreen.css';
 
 const LandingScreen = () => {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    // Force blur on mount to prevent any auto-focusing (blinking cursor) before clicking
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
+  }, []);
+
   return (
     <div className="ls-root">
       {/* Header */}
@@ -23,9 +32,11 @@ const LandingScreen = () => {
         <div className="ls-form">
           <div className="ls-input-group">
             <input 
+              ref={inputRef}
               type="text" 
               placeholder="Enter voucher code" 
               className="ls-input"
+              autoFocus={false}
             />
           </div>
           
