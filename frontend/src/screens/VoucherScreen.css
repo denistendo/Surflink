@@ -1,0 +1,480 @@
+.vs-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  padding-bottom: 80px; 
+  position: relative;
+}
+
+/* Header */
+.vs-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  color: var(--primary);
+  border-bottom: 1px solid var(--border-color);
+}
+.vs-header-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.vs-header-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Main Content */
+.vs-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+}
+
+.vs-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.vs-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.vs-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vs-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.vs-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.vs-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.vs-icon-blue {
+  color: var(--primary);
+}
+
+.vs-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.vs-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.vs-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background-color: #f8fafc;
+  color: var(--text-main);
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: 'Courier New', Courier, monospace;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.vs-input:focus {
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(21, 79, 184, 0.15);
+}
+
+.vs-input::placeholder {
+  letter-spacing: normal;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.vs-btn-primary {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 0.60rem;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.vs-btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.vs-btn-redeem {
+  box-shadow: 0 4px 6px -1px rgba(21, 79, 184, 0.2);
+}
+
+.vs-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.vs-divider::before,
+.vs-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vs-divider:not(:empty)::before {
+  margin-right: 1rem;
+}
+
+.vs-divider:not(:empty)::after {
+  margin-left: 1rem;
+}
+
+/* Payment buttons */
+.vs-pay-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vs-pay-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.vs-pay-btn:hover {
+  background-color: white;
+  border-color: var(--primary);
+}
+
+.vs-pay-btn:active {
+  transform: scale(0.99);
+}
+
+.vs-pay-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vs-pay-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vs-momo-color {
+  background-color: #ecfdf5;
+  color: var(--success);
+}
+
+.vs-card-color {
+  background-color: #eff6ff;
+  color: var(--primary);
+}
+
+.vs-pay-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.vs-chevron {
+  color: var(--text-muted);
+}
+
+.vs-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--danger);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  background-color: #fef2f2;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Success Card */
+.vs-card-success {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.vs-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--success-bg);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.vs-success-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.vs-success-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.vs-success-code-box {
+  width: 100%;
+  background-color: #ecfdf5;
+  border: 1px dashed var(--success);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.vs-success-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #047857;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vs-success-code {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #065f46;
+  letter-spacing: 0.02em;
+  font-family: monospace;
+}
+
+.vs-success-tip {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.45;
+}
+
+/* Payment Modals */
+.vs-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.vs-modal {
+  background-color: white;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+}
+
+.vs-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.vs-modal-close:hover {
+  background-color: #f1f5f9;
+  color: var(--text-main);
+}
+
+.vs-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.vs-modal-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.45;
+}
+
+.vs-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.vs-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.vs-form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.vs-select {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-color);
+  background-color: #f8fafc;
+  color: var(--text-main);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.vs-select:focus {
+  border-color: var(--primary);
+}
+
+.vs-modal .vs-input {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.875rem;
+  letter-spacing: normal;
+  font-family: inherit;
+  text-align: left;
+  text-transform: none;
+  background-color: #f8fafc;
+  border-radius: 0.6rem;
+}
+
+.vs-modal .vs-input:focus {
+  background-color: white;
+}
+
+.vs-btn-confirm {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 0.60rem;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: var(--primary);
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.vs-btn-confirm:hover {
+  background-color: var(--primary-hover);
+}
+
+.vs-btn-confirm:disabled {
+  background-color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@keyframes anim-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: anim-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
