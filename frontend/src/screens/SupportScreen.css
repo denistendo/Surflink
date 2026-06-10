@@ -1,0 +1,231 @@
+.sp-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  padding-bottom: 80px; 
+  position: relative;
+}
+
+/* Header */
+.sp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  color: var(--primary);
+  border-bottom: 1px solid var(--border-color);
+}
+.sp-header-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.sp-header-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Main */
+.sp-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+}
+
+.sp-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.sp-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.sp-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sp-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.sp-card-title-main {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.sp-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+/* Contacts list */
+.sp-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sp-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.sp-contact-item:hover {
+  background-color: #f8fafc;
+  border-color: var(--border-color);
+}
+
+.sp-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eff6ff;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-icon-circle.sp-whatsapp {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+
+.sp-contact-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.sp-contact-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Search */
+.sp-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.sp-search-bar:focus-within {
+  border-color: var(--primary);
+  background-color: white;
+}
+
+.sp-search-icon {
+  color: var(--text-muted);
+}
+
+.sp-search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+/* FAQs */
+.sp-faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sp-faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sp-faq-item:last-child {
+  border-bottom: none;
+}
+
+.sp-faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.sp-faq-question:hover {
+  color: var(--primary);
+}
+
+.sp-faq-answer {
+  padding-bottom: 1rem;
+}
+
+.sp-faq-answer p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.sp-no-results {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+@keyframes anim-in {
+  from {
+    transform: translateY(2px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: anim-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
