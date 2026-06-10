@@ -52,16 +52,24 @@
   letter-spacing: -0.02em;
 }
 
-.ds-badge-connected {
+/* Badges */
+.ds-badge {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  background-color: var(--success);
-  color: white;
   padding: 0.35rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 600;
+  color: white;
+}
+
+.ds-badge-connected {
+  background-color: var(--success);
+}
+
+.ds-badge-disconnected {
+  background-color: var(--text-muted);
 }
 
 /* Cards */
@@ -75,6 +83,16 @@
 
 .ds-card-primary {
   border: 1px solid rgba(16, 185, 129, 0.2); /* faint green border */
+}
+
+.ds-card-pending {
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+}
+
+.ds-card-none {
+  border: 1px dashed var(--border-color);
+  background-color: #f8fafc;
 }
 
 .ds-card-header {
@@ -99,6 +117,9 @@
 .ds-text-primary {
   color: var(--primary);
 }
+.ds-text-amber {
+  color: var(--warning);
+}
 
 .ds-card-id {
   font-size: 0.85rem;
@@ -107,6 +128,9 @@
 
 .ds-center {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ds-time-label {
@@ -122,6 +146,27 @@
   color: var(--text-main);
   line-height: 1;
   letter-spacing: -0.02em;
+}
+
+.ds-icon-none {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.ds-none-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.ds-none-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+  line-height: 1.45;
 }
 
 /* Grid */
@@ -176,6 +221,55 @@
   color: var(--text-main);
 }
 
+/* Custom Buttons */
+.ds-btn-initiate {
+  width: 100%;
+  max-width: 240px;
+  padding: 0.875rem;
+  background-color: var(--warning);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s, transform 0.1s;
+  cursor: pointer;
+  border: none;
+  margin-top: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2);
+}
+
+.ds-btn-initiate:hover {
+  background-color: #d97706;
+}
+
+.ds-btn-initiate:active {
+  transform: scale(0.98);
+}
+
+.ds-btn-buy {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.ds-btn-buy:hover {
+  background-color: var(--primary-hover);
+}
+
 /* Disconnect Button */
 .ds-btn-danger {
   width: 100%;
@@ -197,4 +291,19 @@
 
 .ds-btn-danger:hover {
   background-color: #dc2626;
+}
+
+@keyframes anim-in {
+  from {
+    transform: scale(0.97);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: anim-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
