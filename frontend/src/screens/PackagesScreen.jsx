@@ -7,7 +7,7 @@ const PACKAGES = [
     id: '1h',
     title: '1 Hour',
     sub: '60 minutes access',
-    price: '500 UDX',
+    price: '500 UGX',
     features: ['High-speed access', '1 device connected', 'Instant activation'],
     color: 'blue'
   },
@@ -15,33 +15,33 @@ const PACKAGES = [
     id: '12h',
     title: '12 Hours',
     sub: '12 hours access',
-    price: '1,000 UDX',
+    price: '1,000 UGX',
     features: ['High-speed access', 'Up to 2 devices', 'Instant activation'],
-    color: 'green'
+    color: 'blue'
   },
   {
     id: '24h',
     title: '24 Hours',
     sub: '24 hours access',
-    price: '1,500 UDX',
+    price: '1,500 UGX',
     features: ['Unlimited speed', 'Up to 3 devices', 'Priority support'],
-    color: 'amber'
+    color: 'blue'
   },
   {
     id: 'weekly',
     title: 'Weekly',
     sub: '7 days access',
-    price: '7,000 UDX',
+    price: '7,000 UGX',
     features: ['Unlimited speed', 'Up to 5 devices', 'Priority support'],
-    color: 'indigo'
+    color: 'blue'
   },
   {
     id: 'monthly',
     title: 'Monthly',
     sub: '30 days access',
-    price: '2,500 UDX',
+    price: '25,000 UGX',
     features: ['Unlimited speed', 'Up to 10 devices', '24/7 Priority support'],
-    color: 'rose'
+    color: 'blue'
   }
 ];
 
@@ -124,7 +124,7 @@ const PackagesScreen = () => {
                 <Sparkles size={12} fill="currentColor" /> Limited Offer
               </div>
               <div className="pk-card-header">
-                <div className="pk-icon-wrap pk-icon-trial">
+                <div className="pk-icon-wrap pk-icon-blue">
                   <Award size={20} />
                 </div>
                 <div className="pk-card-title-col">
@@ -134,15 +134,15 @@ const PackagesScreen = () => {
                   </span>
                 </div>
               </div>
-              <div className="pk-price">0 UDX</div>
+              <div className="pk-price">0 UGX</div>
               <ul className="pk-features">
                 <li><Zap size={16} className="pk-feature-icon" /> Free 30 minutes access</li>
                 <li><Zap size={16} className="pk-feature-icon" /> 1 device connected</li>
                 <li><Zap size={16} className="pk-feature-icon" /> Single use for new systems</li>
               </ul>
               <button 
-                className="pk-btn pk-btn-trial"
-                onClick={() => handleBuy({ id: 'trial', title: '30 Min Free Trial', price: '0 UDX', isTrial: true })}
+                className="pk-btn pk-btn-blue"
+                onClick={() => handleBuy({ id: 'trial', title: '30 Min Free Trial', price: '0 UGX', isTrial: true })}
               >
                 Claim Free Trial
               </button>
