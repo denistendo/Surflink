@@ -93,6 +93,23 @@ const PackagesScreen = () => {
   };
 
   const confirmPurchase = () => {
+    const durationSec = selectedPackage.id === 'trial' ? 1800 :
+                        selectedPackage.id === '1h' ? 3600 :
+                        selectedPackage.id === '12h' ? 43200 :
+                        selectedPackage.id === '24h' ? 86400 :
+                        selectedPackage.id === 'weekly' ? 604800 :
+                        selectedPackage.id === 'monthly' ? 2592000 : 0;
+
+    localStorage.setItem('pending_session', JSON.stringify({
+      title: selectedPackage.title,
+      durationSec,
+      voucherCode: voucherCode
+    }));
+
+    if (selectedPackage.isTrial) {
+      localStorage.setItem('surflink_trial_claimed', 'true');
+    }
+
     setShowSuccess(true);
   };
 
@@ -101,7 +118,8 @@ const PackagesScreen = () => {
     setShowSuccess(false);
   };
 
-  const showTrial = trialTimeLeft !== null && trialTimeLeft > 0;
+  const isTrialClaimed = localStorage.getItem('surflink_trial_claimed') === 'true';
+  const showTrial = trialTimeLeft !== null && trialTimeLeft > 0 && !isTrialClaimed;
 
   return (
     <div className="pk-root">
