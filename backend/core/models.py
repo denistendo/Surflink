@@ -17,3 +17,6 @@ class InternetPackage(models.model):
     def __str__(self):
         return f"{self.name} - {self.price} (Duration: {self.duration_hours} hours)"
     
+class Voucher(models.model):
+    name = models.CharField(max_length=10, unique=True)
+    
