@@ -34,3 +34,4 @@ class payment(models.Model):
     phonenumber = models.Charfield(max_length = 10)
     package = models.ForeignKey(InternetPackage, on_delete=models.CASCADE, related_name='payments')
     amount =models.DecimalField(max_digits=10, decimal_places=2)
+    
